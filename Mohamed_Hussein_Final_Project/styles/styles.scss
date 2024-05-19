@@ -1,0 +1,619 @@
+// styles.scss
+
+// Variables
+$primary-color: #00bcd4;
+$secondary-color: #ffffff;
+$off-white: #f0f0f0;
+$light-color: #f8f9fa;
+$dark-color: #343a40;
+$light-dark: #cbcbcb;
+$text-color-dark: #333333;
+$text-color-light: #ffffff;
+$overlay-color: rgba(0,0,0,0.5);
+
+// General Styles
+body {
+  font-family: Arial, sans-serif;
+  color: $dark-color;
+}
+
+// Header Styles
+header {
+  .container{
+    width: 100%;
+    height: 100%;
+    
+    h1{
+      color: $primary-color;
+      font-size: 32px;
+      font-weight: bold;
+    }
+    .d-flex{
+      color: $primary-color;
+    }
+  }
+  .navbar {
+    background-color: $light-dark;
+    .nav-link {
+      color: $dark-color;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+    .btn {
+      background-color: $primary-color;
+      border: none;
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}
+
+.header-section {
+    background-image: url('../img/image1.jpeg') ;
+    background-size: cover;
+    height: 50rem;
+    position: relative;
+    color: $secondary-color;
+    display: flex;
+    align-items: center;
+  
+    .container{
+      position: relative;
+      z-index: 1;
+      
+    }
+    h1{
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    p{
+      font-size: 1.25rem;
+      margin: 20px 0;
+    }
+    .btn-group .btn {
+      margin-top: 10px;
+      margin-right: 10px;
+      height: 3rem;
+      width: 15rem;
+      justify-content: center;
+      align-items: center;
+      padding-top: 0.75rem;
+      &:last-child{
+        margin-right: 10px;
+      }
+      &.btn-primary{
+        background-color: $primary-color ;
+        border-color:$primary-color ;
+        
+      }
+      &.btn-secondary{
+        background-color: $secondary-color;
+        border-color: $secondary-color ;
+        color: $primary-color;
+      }
+    }
+    
+  }
+//---------------next section ------>>>
+.split-section {
+    display: flex;
+    flex-wrap: wrap;
+  
+    .appointment-half, .services-half {
+      flex: 1;
+      padding: 50px;
+    }
+  
+    .appointment-half {
+      background-color: $primary-color;
+      color: $text-color-light;
+  
+      .form-control {
+        background-color: $primary-color;
+        color: $text-color-light;
+        border: 1px solid $text-color-light;
+        margin-bottom: 20px;
+  
+        &::placeholder {
+          color: $text-color-light;
+        }
+      }
+  
+      .btn {
+        background-color: $text-color-light;
+        color: $primary-color;
+        border: none;
+  
+        &:hover {
+          background-color: lighten($text-color-light, 10%);
+        }
+      }
+    }
+  
+    .services-half {
+      background-color: $off-white;
+      color: $primary-color;
+  
+      .service {
+        margin-bottom: 20px;
+        background-color: $secondary-color;
+        padding-left: 3rem;
+        padding: 1rem 1rem;
+        
+        h4 {
+          color: $dark-color;
+        }
+        p{
+            color: $light-dark;
+        }
+      }
+    }
+  }
+
+// Services Section
+.services {
+    background-color: $off-white;
+    p{
+        color: $primary-color;
+    }
+  .card {
+    border: none;
+    .icon {
+      font-size: 2rem;
+      color: $primary-color;
+    }
+    .card-title {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .card-text{
+        color: $light-dark;
+    }
+    :hover{
+        background-color: $primary-color;
+        .card-text{
+            color: $text-color-light;
+        }
+        .card-title{
+            color: $text-color-light;
+        }
+    }
+  }
+}
+
+.clinic-section {
+    padding: 50px 0;
+    background-color: $off-white;
+  
+    .info {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+      
+      .stat {
+       text-align: center;
+       border: 1px solid $primary-color;
+       border-radius: 5px;
+       width: 30%;
+      }
+      .icon{
+        margin-bottom: 10px;
+      }
+      .stats-number{
+        font-size: 2em;
+        color: $primary-color;
+      }
+      .stats-label{
+        font-size: 1.2em;
+        color: $light-dark;
+      }
+    }
+  }
+
+// Appointment Section
+.appointment {
+    position: relative;
+    background:url(../img/image1.jpeg) no-repeatcenter center/cover ;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color:  $primary-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .content{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        color: $secondary-color;
+        .small-text{
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 0;
+        }
+        h1{
+            margin: 0;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        .appointment-button{
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: $secondary-color;
+            color: $primary-color;
+            text-decoration: none;
+            border: 2px solid $secondary-color;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    }
+
+}
+//doctors
+.doctors{
+    text-align: center;
+    padding: 50px 0;
+    background-color: $off-white;
+    p{
+        color: $primary-color;
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 10px;    
+    }
+    h2{
+        color: $dark-color;
+        font-weight: bold;
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .doctor-card{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .doctor{
+        background-color: $secondary-color;
+        border: 1px solid $secondary-color;
+        border-radius: 5px;
+        padding: 20px;
+        width: 250px;
+        text-align: center;
+        
+        img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        h4{
+            font-size: 1.2rem;
+            color: $dark-color;
+            margin-bottom: 5px;
+        }
+        p{
+            color: $primary-color;
+            margin-bottom: 10px;
+         
+        }
+        .description{
+            font-size: 0.9rem;
+            color: $light-dark;
+        }
+        .socialmedia-icon{
+            margin: 10px 0;
+            a{
+                color: $primary-color;
+                margin: 0 5px;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+
+// Testimonial Section
+.testimonials {
+    p{
+        color: $primary-color;
+    }
+    background-color: $off-white;
+  .testimonial {
+    background-color: $secondary-color;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba($dark-color, 0.075);
+    color: $light-dark;
+    p{
+        color: $light-dark;
+    }
+    .customer-info {
+      display: flex;
+      align-items: center;
+      img {
+        margin-right: 0.75rem;
+        width: 50px;
+        height: 50px;
+        
+      }
+      h5 {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+//Results
+.result-section{
+    text-align: center;
+    background-color: $off-white;
+    .section-title{
+        color: $primary-color;
+        font-weight: bold;
+       padding-top: 2rem;
+    }
+    h2{
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    .results-container{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .result-item{
+        position: relative;
+        margin: 10px;
+        overflow: hidden;
+        width: 500px;
+        height: 300px;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+        .info-overlay{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0,0,0,0.2);
+            padding: 10px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+            color: $text-color-light;
+            p{
+                margin: 0;
+                font-size: 16px;
+            }
+        }
+        &:hover img{
+            transform: scale(1.1);
+        }
+        &:hover .info-overlay{
+            transform: translateY(0);
+        }
+    }
+}
+//pricing table and pacakages
+.pricing-container{
+    text-align: center;
+    padding: 50px 0;
+    background-color: $off-white;
+}
+.title{
+    color: $primary-color;
+    font-weight: bold;
+    font-size: 14px;
+}
+h2{
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: $dark-color;
+}
+.pricing-table{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.plan{
+    background: $off-white;
+    border: 0.5px solid $dark-color;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: background-color 0.3s;
+    &:hover{
+        background-color: $secondary-color;
+    }
+    h4{
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: $dark-color;
+    }
+    .price{
+        font-size: 2rem;
+        color: $primary-color;
+        margin-bottom: 20px;
+    }
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0 0 20px 0;
+        li{
+            margin-bottom: 10px;
+            color: $light-dark;
+            span{
+                color: $primary-color;
+            }
+        }
+    }
+    .btn{
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+        background-color: $primary-color;
+        color: $secondary-color;
+        text-decoration: none;
+        border-radius: 5px; 
+    }
+   
+}
+.footer{
+    background-color: $primary-color;
+    color: $secondary-color;
+    padding: 50px 0;
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+
+    }
+    .footer-column{
+        flex: 11 200px;
+        margin: 10px;
+        h3{
+            font-size: 1.5rem;
+        }
+        #subtitle{
+            font-size: 0.5rem;
+            margin-bottom: 20px;
+        }
+        p,ul,li{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul{
+            margin-top:10px ;
+            li{
+                margin-bottom: 10px;
+                a{
+                    color:$secondary-color;
+                    text-decoration: none;
+                }
+                i{
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    .social-icon{
+        margin-top: 10px;
+    }
+    img{
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    p{
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+.footer-bottom{
+    text-align: center;
+    justify-content: center;
+    padding: 20px 0;
+    background-color: darken $primary-color;
+    p{
+        margin: 0;
+       
+    }
+}
+@media screen and (max-width: 768px) {
+  .bg-light.py-3 {
+    padding: 20px;
+}
+
+.bg-light.py-3 > * {
+    display: block;
+    margin-bottom: 10px; /* Adjust margin as needed */
+}
+  .header-section {
+    height: auto;
+    padding: 50px;
+
+    .btn-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-group .btn {
+        margin-top: 10px;
+        margin-right: 0; /* Remove right margin to stack buttons vertically */
+    }
+}
+
+  .split-section {
+      flex-direction: column;
+      padding: 20px;
+
+      .appointment-half,
+      .services-half {
+          padding: 20px;
+      }
+  }
+
+  .clinic-section {
+      .info {
+          flex-direction: column;
+          margin-top: 20px;
+
+          .stat {
+              width: 100%;
+              margin-bottom: 20px;
+          }
+      }
+  }
+
+  .doctors {
+      padding: 20px;
+
+      .doctor-card {
+          width: 100%;
+          margin-bottom: 20px;
+      }
+  }
+
+  .testimonials,
+  .result-section,
+  .pricing-container,
+  .footer,
+  .footer-bottom {
+      padding: 20px;
+  }
+
+  .pricing-table {
+      flex-direction: column;
+
+      .plan {
+          width: 100%;
+          margin-bottom: 20px;
+      }
+  }
+}
